@@ -1,7 +1,6 @@
 $text-color: rgb(254, 238, 219);
-$bg-color: rgb(34, 34, 34);
 $bg-color-first-section: rgb(44, 44, 44);
-$bg-color-second-section: rgb(73, 72, 72);
+$bg-color-second-section: rgb(34, 34, 34);
 $shadow-color: rgb(43, 106, 242);
 
 @keyframes animationOpacity {
@@ -17,6 +16,7 @@ $shadow-color: rgb(43, 106, 242);
 
 * {
     box-sizing: border-box;
+    color: $text-color;
     margin: 0;
     padding: 0;
     text-decoration: none;
@@ -29,9 +29,9 @@ header {
     flex-direction: row;
     height: 10vh;
     justify-content: space-between;
-    /*    position: fixed;
-    top: 0; */
-    width: 100vw;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
 
     h1 {
         color: $text-color;
@@ -43,7 +43,6 @@ header {
 
         ul,
         li {
-
             color: $text-color;
             display: inline-block;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -56,13 +55,33 @@ header {
             color: $text-color;
             text-decoration: none;
         }
+    }
+
+    .displayColumn{
+        margin-right: 0;
+        width: 10vw;
+        ul,li{
+            flex-direction: row;
+            width: 10vw;
+        }
 
     }
 }
 
-body {
-    background-color: $bg-color;
+.changePostionToRight {
 
+    border-radius: 12px 0 0 12px;
+    height: auto;
+    width: 14vw;
+    flex-direction: column;
+    right: 0;
+    margin-top: 10vh;
+    transition-duration: 2s;
+
+
+}
+
+body {
     main {
         #home {
             align-items: center;
@@ -71,7 +90,7 @@ body {
             justify-content: space-between;
             flex-direction: row;
             height: 100vh;
-            width: 100vw;
+
             padding: 0 4vw 0 4vw;
 
             .home__text {
@@ -84,20 +103,20 @@ body {
                 width: 50vw;
 
                 h2 {
-                    box-shadow: -10px -10px 4px 4px $shadow-color;
                     border-radius: 12px 0px;
+                    box-shadow: -10px -10px 4px 4px $shadow-color;
+                    margin-left: 0;
                     padding: 8px;
                     width: 46vw;
 
-
                     .p1 {
-                        animation-duration: 3s;
+                        animation-duration: 2s;
                         animation-name: animationOpacity;
                     }
 
                     .p2 {
-                        animation-delay: 2s;
-                        animation-duration: 3s;
+                        animation-delay: 1s;
+                        animation-duration: 2s;
                         animation-fill-mode: forwards;
                         animation-name: animationOpacity;
                         opacity: 0;
@@ -109,6 +128,14 @@ body {
                     box-shadow: 10px 10px 4px 4px $shadow-color;
                     padding: 8px;
                     width: 46vw;
+
+                    .p3 {
+                        animation-delay: 2s;
+                        animation-duration: 2s;
+                        animation-fill-mode: forwards;
+                        animation-name: animationOpacity;
+                        opacity: 0;
+                    }
                 }
             }
 
@@ -142,21 +169,8 @@ body {
         }
 
         #aboutMe {
+            background-color: $bg-color-second-section;
             height: 80vh;
-            width: 100vw;
-
-            h2 {
-                border-radius: 12px 0 0 12px;
-                box-shadow: -4px 4px 2px 2px $shadow-color;
-                color: $text-color;
-                margin-left: 4vw;
-                padding-top: 4vh;
-                padding: 10px;
-                position: relative;
-                text-align: left;
-                top: 0vh;
-                width: 10vw;
-            }
 
 
         }
@@ -164,76 +178,46 @@ body {
         #projects {
             background-color: $bg-color-first-section;
             height: 80vh;
-
-
-            h2 {
-                /* border-bottom: solid 1px $shadow-color; */
-                border-radius: 0 0 0 12px;
-                box-shadow: -10px 10px 6px 4px $shadow-color;
-                color: $text-color;
-                margin-left: 4vw;
-                padding-top: 4vh;
-                padding: 10px;
-                position: relative;
-                text-align: left;
-                top: 0;
-                width: 10vw;
-            }
         }
 
         #skills {
             background-color: $bg-color-second-section;
+            display: flex;
+            flex-direction: column;
             height: 80vh;
 
-            h2 {
-                border-radius: 0px 0 12px 12px;
-                box-shadow: 0px 10px 10px 4px $shadow-color;
-                color: $text-color;
-                margin: 0 auto;
-                padding-top: 4vh;
-                padding: 10px;
-                position: relative;
-                text-align: center;
-                width: 20vw;
+            .skills__container {
+                height: 70vh;
             }
         }
 
         #CV {
             background-color: $bg-color-first-section;
             height: 80vh;
-
-            h2 {
-                border-radius: 0px 0 12px 12px;
-                box-shadow: 0px 10px 10px 4px $shadow-color;
-                color: $text-color;
-                margin: 0 auto;
-                padding-top: 4vh;
-                padding: 10px;
-                position: relative;
-                text-align: center;
-                width: 20vw;
-            }
         }
 
         #contact {
             background-color: $bg-color-second-section;
             height: 40vh;
-
-            h2 {
-                border-bottom: solid 1px $shadow-color;
-                border-left: solid 1px $shadow-color;
-                border-radius: 0 0 12px 12px;
-                color: $text-color;
-                margin-left: 4vw;
-                padding-top: 4vh;
-                padding: 10px;
-                position: relative;
-                text-align: left;
-                top: 0vh;
-                width: 10vw;
-            }
         }
 
 
+        h2 {
+            border-radius: 12px 0 0 12px;
+            box-shadow: -4px 4px 2px 2px $shadow-color;
+            color: $text-color;
+            margin-left: 4vw;
+            padding-top: 4vh;
+            padding: 10px;
+            position: relative;
+            text-align: left;
+            top: 0vh;
+            width: 10vw;
+        }
+
+    }
+
+    footer {
+        background-color: $bg-color-first-section;
     }
 }

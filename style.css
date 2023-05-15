@@ -9,6 +9,7 @@
 
 * {
   box-sizing: border-box;
+  color: #feeedb;
   margin: 0;
   padding: 0;
   text-decoration: none;
@@ -21,9 +22,9 @@ header {
   flex-direction: row;
   height: 10vh;
   justify-content: space-between;
-  /*    position: fixed;
-    top: 0; */
-  width: 100vw;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
 }
 
 header h1 {
@@ -50,8 +51,24 @@ header nav a {
   text-decoration: none;
 }
 
-body {
-  background-color: #222222;
+header .displayColumn {
+  margin-right: 0;
+  width: 10vw;
+}
+
+header .displayColumn ul, header .displayColumn li {
+  flex-direction: row;
+  width: 10vw;
+}
+
+.changePostionToRight {
+  border-radius: 12px 0 0 12px;
+  height: auto;
+  width: 14vw;
+  flex-direction: column;
+  right: 0;
+  margin-top: 10vh;
+  transition-duration: 2s;
 }
 
 body main #home {
@@ -61,7 +78,6 @@ body main #home {
   justify-content: space-between;
   flex-direction: row;
   height: 100vh;
-  width: 100vw;
   padding: 0 4vw 0 4vw;
 }
 
@@ -76,20 +92,21 @@ body main #home .home__text {
 }
 
 body main #home .home__text h2 {
-  box-shadow: -10px -10px 4px 4px #2b6af2;
   border-radius: 12px 0px;
+  box-shadow: -10px -10px 4px 4px #2b6af2;
+  margin-left: 0;
   padding: 8px;
   width: 46vw;
 }
 
 body main #home .home__text h2 .p1 {
-  animation-duration: 3s;
+  animation-duration: 2s;
   animation-name: animationOpacity;
 }
 
 body main #home .home__text h2 .p2 {
-  animation-delay: 2s;
-  animation-duration: 3s;
+  animation-delay: 1s;
+  animation-duration: 2s;
   animation-fill-mode: forwards;
   animation-name: animationOpacity;
   opacity: 0;
@@ -100,6 +117,14 @@ body main #home .home__text h3 {
   box-shadow: 10px 10px 4px 4px #2b6af2;
   padding: 8px;
   width: 46vw;
+}
+
+body main #home .home__text h3 .p3 {
+  animation-delay: 2s;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  animation-name: animationOpacity;
+  opacity: 0;
 }
 
 body main #home .home__photo {
@@ -131,11 +156,37 @@ body main #home .home__photo--frame--file {
 }
 
 body main #aboutMe {
+  background-color: #222222;
   height: 80vh;
-  width: 100vw;
 }
 
-body main #aboutMe h2 {
+body main #projects {
+  background-color: #2c2c2c;
+  height: 80vh;
+}
+
+body main #skills {
+  background-color: #222222;
+  display: flex;
+  flex-direction: column;
+  height: 80vh;
+}
+
+body main #skills .skills__container {
+  height: 70vh;
+}
+
+body main #CV {
+  background-color: #2c2c2c;
+  height: 80vh;
+}
+
+body main #contact {
+  background-color: #222222;
+  height: 40vh;
+}
+
+body main h2 {
   border-radius: 12px 0 0 12px;
   box-shadow: -4px 4px 2px 2px #2b6af2;
   color: #feeedb;
@@ -148,74 +199,6 @@ body main #aboutMe h2 {
   width: 10vw;
 }
 
-body main #projects {
+body footer {
   background-color: #2c2c2c;
-  height: 80vh;
-}
-
-body main #projects h2 {
-  /* border-bottom: solid 1px $shadow-color; */
-  border-radius: 0 0 0 12px;
-  box-shadow: -10px 10px 6px 4px #2b6af2;
-  color: #feeedb;
-  margin-left: 4vw;
-  padding-top: 4vh;
-  padding: 10px;
-  position: relative;
-  text-align: left;
-  top: 0;
-  width: 10vw;
-}
-
-body main #skills {
-  background-color: #494848;
-  height: 80vh;
-}
-
-body main #skills h2 {
-  border-radius: 0px 0 12px 12px;
-  box-shadow: 0px 10px 10px 4px #2b6af2;
-  color: #feeedb;
-  margin: 0 auto;
-  padding-top: 4vh;
-  padding: 10px;
-  position: relative;
-  text-align: center;
-  width: 20vw;
-}
-
-body main #CV {
-  background-color: #2c2c2c;
-  height: 80vh;
-}
-
-body main #CV h2 {
-  border-radius: 0px 0 12px 12px;
-  box-shadow: 0px 10px 10px 4px #2b6af2;
-  color: #feeedb;
-  margin: 0 auto;
-  padding-top: 4vh;
-  padding: 10px;
-  position: relative;
-  text-align: center;
-  width: 20vw;
-}
-
-body main #contact {
-  background-color: #494848;
-  height: 40vh;
-}
-
-body main #contact h2 {
-  border-bottom: solid 1px #2b6af2;
-  border-left: solid 1px #2b6af2;
-  border-radius: 0 0 12px 12px;
-  color: #feeedb;
-  margin-left: 4vw;
-  padding-top: 4vh;
-  padding: 10px;
-  position: relative;
-  text-align: left;
-  top: 0vh;
-  width: 10vw;
 }
