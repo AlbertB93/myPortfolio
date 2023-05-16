@@ -2,6 +2,7 @@ $text-color: rgb(254, 238, 219);
 $bg-color-first-section: rgb(44, 44, 44);
 $bg-color-second-section: rgb(34, 34, 34);
 $shadow-color: rgb(43, 106, 242);
+$bg-color-header: rgb(23, 23, 23);
 
 @keyframes animationOpacity {
     from {
@@ -24,7 +25,7 @@ $shadow-color: rgb(43, 106, 242);
 
 header {
     align-items: center;
-    background-color: rgb(23, 23, 23);
+    background-color: $bg-color-header;
     display: flex;
     flex-direction: row;
     height: 10vh;
@@ -57,10 +58,12 @@ header {
         }
     }
 
-    .displayColumn{
+    .displayColumn {
         margin-right: 0;
         width: 10vw;
-        ul,li{
+
+        ul,
+        li {
             flex-direction: row;
             width: 10vw;
         }
@@ -172,12 +175,75 @@ body {
             background-color: $bg-color-second-section;
             height: 80vh;
 
+            p {
+                font-size: 1.5rem;
+            }
+
 
         }
 
         #projects {
             background-color: $bg-color-first-section;
             height: 80vh;
+
+            .section__container {
+                display: flex;
+                justify-content: space-between;
+                width: 80vw;
+
+                &--projectBox {
+                    align-items: center;
+
+                    display: flex;
+                    flex-direction: column;
+                    height: 70vh;
+                    justify-content: space-around;
+                    width: 35vw;
+
+                    h3 {
+                        border-bottom: solid 1px white;
+                        text-align: center;
+
+                    }
+
+                    &--photo {
+                        /* border: solid 1px $shadow-color; */
+                        height: 300px;
+
+                        width: 600px;
+
+                        .fileImg {
+                            height: auto;
+                            width: 100%;
+                        }
+                    }
+
+                    &--description {
+                        /*  border: solid 1px white; */
+                        text-indent: 30px;
+                        width: 30vw;
+                    }
+
+                    &--buttons {
+                        /*  border: solid 1px green; */
+                        display: flex;
+                        flex-direction: column;
+                        width: 30vw;
+                    }
+
+                    .projectButton {
+                        background-color: $bg-color-header;
+                        box-shadow: 4px 4px 2px 2px $shadow-color;
+                        border-radius: 12px;
+                        cursor: pointer;
+                        font-size: 1.5rem;
+                        margin: 20px auto;
+                        padding: 8px;
+                        width: 20vw;
+                    }
+                }
+            }
+
         }
 
         #skills {
@@ -185,10 +251,6 @@ body {
             display: flex;
             flex-direction: column;
             height: 80vh;
-
-            .skills__container {
-                height: 70vh;
-            }
         }
 
         #CV {
@@ -213,6 +275,13 @@ body {
             text-align: left;
             top: 0vh;
             width: 10vw;
+        }
+
+        .section__container {
+            /*       border: solid 1px red; */
+            font-size: 1.5rem;
+            margin: 20px;
+            width: 80vw;
         }
 
     }
